@@ -11,7 +11,7 @@ jobs:
         image: postgres:latest
         env:
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_PASSWORD: password
           POSTGRES_DB: twitter_api_flask_test
         ports:
           - 5432:5432
@@ -35,4 +35,4 @@ jobs:
       run: |
         pipenv run nosetests
       env:
-        DATABASE_URL: postgresql://postgres:postgres@localhost/twitter_api_flask
+        DATABASE_URL: postgresql://postgres:password@localhost/twitter_api_flask
